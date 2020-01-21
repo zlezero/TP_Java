@@ -11,13 +11,13 @@ public class NettoyeurDistrait extends RobotNettoyeur {
 	
 	public void parcourir() {
 		
-		int compteur = 0;
+		int compteur = 1;
 		int j = 0;
 
-		super.vaEn(0, 0);
+		super.vaEn(0, 0);	
 			
-		for (int i = 0; i < super.getMonde().getNbL(); i++) {
-			
+		for (int i = 0; i < super.getMonde().getNbL();) {
+						
 			for (j = 0; j < super.getMonde().getNbC(); j++) {	
 				
 				super.vaEn(i, j);
@@ -25,23 +25,27 @@ public class NettoyeurDistrait extends RobotNettoyeur {
 				if (compteur % 2 == 0) {
 					super.nettoyer();
 				}
-				
+								
 				compteur++;
 				
 			}
 			
-			for (j = super.getMonde().getNbC(); j >= 0; j--) {		
+			i++;
+						
+			for (j = super.getMonde().getNbC() - 1; j >= 0; j--) {		
 				
 				super.vaEn(i, j);
 				
 				if (compteur % 2 == 0) {
 					super.nettoyer();
 				}
-				
+								
 				compteur++;
 				
 			}
 			
+			i++;
+						
 		}
 		
 	}

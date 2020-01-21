@@ -3,25 +3,27 @@ public class PollueurSauteur extends RobotPollueur {
 	
 	private int deltax;
 	
-	public PollueurSauteur(int x, int y, Monde m) {
+	public PollueurSauteur(int x, int y, Monde m, int deltax) {
 		super(x, y, m);
+		this.deltax = deltax;
 	}
 	
-	public PollueurSauteur(Monde m) {
+	public PollueurSauteur(Monde m, int deltax) {
 		super(m);
+		this.deltax = deltax;
 	}
 
 	public void parcourir() {
+		
 		super.vaEn(0, 0);
-		int compteur = 0;
-		while (super.getPosx() != super.getMonde().getNbC()) {
-			super.vaEn(compteur, compteur * deltax);
-			deltax += 1;
-			compteur += 1;
-			if (deltax > super.getMonde().getNbC()) {
-				deltax %= super.getPosx();
-			}
+		
+		for (int i = 0; i < this.getMonde().getNbL(); i++) {
+			
+			this.vaEn(i, (deltax * i) % this.getMonde().getNbC());
+			this.polluer();
+			
 		}
+		
 	}
 	
 }

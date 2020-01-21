@@ -30,7 +30,7 @@ public class RobotNettoyeur extends Robot {
 				super.vaEn(i, j);
 				nettoyer();
 			}
-			
+						
 		}
 		
 	}

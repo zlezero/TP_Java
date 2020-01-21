@@ -14,11 +14,11 @@ public abstract class Robot {
 		this((int)(Math.random() * ((m.getNbC()) + 1)), (int)(Math.random() * ((m.getNbL()) + 1)), m);
 	}
 	
-	public boolean vaEn(int i, int j) {
+	public boolean vaEn(int x, int y) {
 		
-		if (i < m.getNbC() && j < m.getNbL()) {
-			posx = i;
-			posy = j;
+		if (x < m.getNbC() && y < m.getNbL()) {
+			posx = x;
+			posy = y;
 			return true;
 		}
 		else 
@@ -38,6 +38,19 @@ public abstract class Robot {
 
 	public Monde getMonde() {
 		return m;
+	}
+
+	public void setPosx(int posx) {
+		this.posx = posx;
+	}
+
+	public void setPosy(int posy) {
+		this.posy = posy;
+	}
+	
+	public void setCoordonnee(int posx, int posy) {
+		this.posx = posx;
+		this.posy = posy;
 	}
 	
 }

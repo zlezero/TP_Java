@@ -35,7 +35,7 @@ public class TestRobot {
 		System.out.println("\n=== TEST DES ROBOTS ===\n");
 		
 		
-		System.out.println("=== Pollution par le Pollueur Tout Droit ===\n");
+		System.out.println("=== Pollution par le Robot Pollueur Tout Droit sur toutes les colonnes ===\n");
 		
 		PollueurToutDroit pollueur1 = new PollueurToutDroit(0, 0, monde, 0);
 		pollueur1.parcourir();
@@ -56,14 +56,21 @@ public class TestRobot {
 				
 		System.out.println(monde.toString());
 		
-		System.out.println("=== Nettoyage par le Robot Nettoyeur ===");
+		System.out.println("=== Nettoyage par le Robot Nettoyeur ===\n");
 		
 		RobotNettoyeur nettoyeur1 = new RobotNettoyeur(0, 0, monde);
 		nettoyeur1.parcourir();
 		
 		System.out.println(monde.toString());
 		
-		System.out.println("=== Nettoyage par le Robot Nettoyeur Distrait ===");
+		System.out.println("=== Pollution d'une colonne par le Robot Pollueur Tout Droit ===\n");
+		
+		pollueur1.setColDepart(5);
+		pollueur1.parcourir();
+		
+		System.out.println(monde.toString());
+
+		System.out.println("=== Nettoyage par le Robot Nettoyeur Distrait ===\n");
 
 		for (int i = 0; i != 10; i++) {
 			pollueur1.setColDepart(i);
@@ -74,6 +81,16 @@ public class TestRobot {
 		
 		NettoyeurDistrait nettoyeur2 = new NettoyeurDistrait(0, 0, monde);
 		nettoyeur2.parcourir();
+		
+		System.out.println(monde.toString());
+		
+		nettoyeur1.setCoordonnee(0, 0);
+		nettoyeur1.parcourir();
+		
+		System.out.println("=== Pollution par le Robot Pollueur Sauteur avec un Deltax de 2 ===\n");
+
+		PollueurSauteur pollueur2 = new PollueurSauteur(0, 0, monde, 2);
+		pollueur2.parcourir();
 		
 		System.out.println(monde.toString());
 		
