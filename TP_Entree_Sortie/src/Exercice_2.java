@@ -12,10 +12,10 @@ public class Exercice_2 {
 			
 			String ligne;
 			
-			while ((ligne = br.readLine()) != null) {
+			while ((ligne = br.readLine()) != null) { //Tant qu'il y a des lignes à lire
 				
-				if (compteur % 2 == 0) {
-					System.out.println(ligne);
+				if (compteur % 2 == 0) { //Si la ligne est paire
+					System.out.println(ligne); //Alors on l'affiche
 				}
 				
 				compteur++;
@@ -42,10 +42,10 @@ public class Exercice_2 {
 			
 			String ligne;
 
-			while ((ligne = lnr.readLine()) != null) {
+			while ((ligne = lnr.readLine()) != null) { //Tant qu'il y a des lignes à lire
 				
-				if (lnr.getLineNumber() % 2 != 0) {
-					System.out.println(ligne);
+				if (lnr.getLineNumber() % 2 != 0) { //Si la ligne est paire
+					System.out.println(ligne); //Alors on l'affiche
 				}
 				
 			}

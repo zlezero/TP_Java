@@ -14,8 +14,8 @@ public class Exercice_3 {
 			String ligne;
 			int nbrMots = 0;
 			
-			while ((ligne = br.readLine()) != null) {
-				nbrMots += ligne.split(" ").length;
+			while ((ligne = br.readLine()) != null) { //Tant qu'il y a des lignes à lire
+				nbrMots += ligne.split(" ").length; //On regarde le nombre d'espaces pour savoir le nombre de mots sur une ligne
 			}
 			
 			nbrMots--;
@@ -41,9 +41,9 @@ public class Exercice_3 {
 			String ligne;
 			int nbrOccurence = 0;
 			
-			while ((ligne = br.readLine()) != null) {
-				if (ligne.contains(mot))
-					nbrOccurence++;		
+			while ((ligne = br.readLine()) != null) { //Tant qu'il y a des lignes à lire
+				if (ligne.contains(mot)) //Si une ligne contient le mot que l'on recherche
+					nbrOccurence++;		//Alors on augmente le nombre d'occurences trouvées
 			}
 						
 			br.close();
@@ -66,9 +66,9 @@ public class Exercice_3 {
 			
 			int caractere;
 			
-			while ((caractere = br.read()) != -1) {
-				if ((char)caractere != ' ' && (char)caractere != '\t' && (char)caractere != '\n' && (char)caractere != '\r') {
-					System.out.write(caractere);
+			while ((caractere = br.read()) != -1) { //Tant qu'il y a des caractères à lire
+				if ((char)caractere != ' ' && (char)caractere != '\t' && (char)caractere != '\n' && (char)caractere != '\r') { //Si il ne s'agit pas d'un espace, d'une tabulation ou d'un saut de ligne
+					System.out.write(caractere); //Alors on écrit le caractère
 				}
 			}
 						

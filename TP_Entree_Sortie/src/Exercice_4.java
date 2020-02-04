@@ -11,7 +11,8 @@ public class Exercice_4 {
 			
 			DataOutputStream dos = new DataOutputStream(new FileOutputStream(nomFichier));
 			
-			for (int i = 0; i < point.length; i++) {
+			//On écrit tous les points dans le fichier
+			for (int i = 0; i < point.length; i++) { 
 				dos.writeInt(point[i].x);
 				dos.writeInt(point[i].y);
 			}
@@ -32,8 +33,9 @@ public class Exercice_4 {
 			
 			ArrayList<Point> point = new ArrayList<Point>();
 			
+			//Tant qu'il reste des données à lire
 			while (dis.available() > 0) {
-				point.add(new Point(dis.readInt(), dis.readInt()));	
+				point.add(new Point(dis.readInt(), dis.readInt()));	//On lit les points
 			}
 			
 			dis.close();
@@ -54,7 +56,7 @@ public class Exercice_4 {
 		try {
 			
 			ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(nomFichier));
-			oos.writeObject(point);
+			oos.writeObject(point); //On écrit le tableau de points
 			oos.close();	
 
 		} catch (IOException e) {
@@ -68,7 +70,7 @@ public class Exercice_4 {
 		try {
 			
 			ObjectInputStream ois = new ObjectInputStream(new FileInputStream(nomFichier));		
-			Point[] point = (Point[]) ois.readObject();			
+			Point[] point = (Point[]) ois.readObject(); //On lit le tableau de points
 			ois.close();
 			
 			return point;

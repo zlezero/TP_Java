@@ -8,8 +8,8 @@ public class Exercice_1 {
 		
 		try {
 			
-			while ((data = System.in.read()) != -1) {
-				System.out.write(data);
+			while ((data = System.in.read()) != -1) { //Tant qu'il y a des données à lire
+				System.out.write(data); //On les écrits dans la sortie
 			}
 			
 		} catch (IOException e) {
@@ -27,8 +27,8 @@ public class Exercice_1 {
 			BufferedInputStream bis = new BufferedInputStream(inputStream, 8000);
 			BufferedOutputStream bos = new BufferedOutputStream(outputStream, 8000);
 			
-			while ((data = bis.read()) != -1) {
-				bos.write(data);
+			while ((data = bis.read()) != -1) { //Tant qu'il y a des données à lire
+				bos.write(data); //On les écrits dans le stream de sortie
 			}
 			
 			bis.close();
