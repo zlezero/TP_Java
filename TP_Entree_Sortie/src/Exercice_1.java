@@ -68,7 +68,7 @@ public class Exercice_1 {
 			e.printStackTrace();
 		}
 		
-		System.out.println("=== Lecture de l'entrée standard et recopie dans la sortie standard === ");
+		System.out.println("=== Lecture de l'entrÃ©e standard et recopie dans la sortie standard === ");
 		Exercice_1_1();
 		
 	}
